@@ -1,0 +1,36 @@
+spring:
+  application:
+    name:
+      SpringSecurityDemo
+  jackson:
+    datatype:
+      datetime:
+        WRITE_DATES_AS_TIMESTAMPS: false
+
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_security?serverTimezone=Asia/Qingdao
+    username: root
+    password: 152142
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  servlet:
+    context-path: /api
+  port: 8080
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-field: is_delete
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+myapp:
+  security:
+    jwt:
+      secret-key: bdf30e209bffe51f26ccb84854ed39d221f1628e3c0e2972eef4a0077a6be290
+      expiration: 8640000
